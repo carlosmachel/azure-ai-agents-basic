@@ -1,0 +1,6 @@
+@AzureAiAgentsBasic_HostAddress = http://localhost:5070
+
+GET {{AzureAiAgentsBasic_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
