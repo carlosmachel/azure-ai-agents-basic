@@ -15,7 +15,7 @@ public static class Module
             })
             .WithTags("Ai Agents");
         
-        app.MapGet("/code-interpreter/create-thread", async (
+        app.MapGet("/ai-agent/create-thread", async (
                 [FromServices] Service service) =>
             {
                 var agentId = await service.CreateThreadAsync();
@@ -23,7 +23,7 @@ public static class Module
             })
             .WithTags("Ai Agents");
         
-        app.MapGet("/code-interpreter/run", async (
+        app.MapGet("/ai-agent/run", async (
                 [FromServices] Service service,
                 [FromQuery] string agentId,
                 [FromQuery] string threadId,
@@ -32,6 +32,6 @@ public static class Module
                 var result = await service.RunAsync(agentId, threadId, userInput);
                 return Results.Ok(result);
             })
-            .WithTags("CodeInterpreterTool");
+            .WithTags("Ai Agents");
     }
 }
