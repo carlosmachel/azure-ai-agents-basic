@@ -1,56 +1,56 @@
 # azure-ai-agents-basic
 
-Demonstração básica do Azure AI Agent
+Basic Azure AI Agent Demo
 
-## Descrição
+## Description
 
-Este projeto apresenta uma implementação simples de agentes de IA utilizando os recursos do Azure AI Agents. O objetivo é demonstrar como criar, gerenciar threads de conversação e interagir com agentes persistentes utilizando a infraestrutura do Azure.
+This project presents a simple implementation of AI agents using Azure AI Agents resources. The goal is to demonstrate how to create, manage conversation threads, and interact with persistent agents using Azure infrastructure.
 
-## Funcionalidades
+## Features
 
-- **Criação de agentes de IA**: Permite criar novos agentes com nome e instruções customizadas.
-- **Gerenciamento de threads**: Criação de threads de conversação associadas a agentes.
-- **Execução e interação**: Envio de mensagens para agentes e obtenção de respostas em threads ativas.
+- **AI Agent Creation**: Create new agents with custom name and instructions.
+- **Thread Management**: Create conversation threads associated with agents.
+- **Execution and Interaction**: Send messages to agents and get responses in active threads.
 
-## Estrutura do Projeto
+## Project Structure
 
-- `src/AzureAiAgentsBasic/Application/Service.cs`: Classe principal que implementa a lógica de criação de agentes, threads e execução de interações.
-- `src/AzureAiAgentsBasic/Application/Module.cs`: Define os endpoints HTTP para interação com os agentes.
-- `src/AzureAiAgentsBasic/Application/AzureAiSettings.cs`: Classe de configuração para integração com o Azure AI.
-- `src/AzureAiAgentsBasic/Program.cs`: Inicialização da aplicação ASP.NET Core e configuração dos serviços.
+- `src/AzureAiAgentsBasic/Application/Service.cs`: Main class that implements the logic for creating agents, threads, and executing interactions.
+- `src/AzureAiAgentsBasic/Application/Module.cs`: Defines HTTP endpoints for interacting with agents.
+- `src/AzureAiAgentsBasic/Application/AzureAiSettings.cs`: Configuration class for Azure AI integration.
+- `src/AzureAiAgentsBasic/Program.cs`: ASP.NET Core application initialization and service configuration.
 
 ## Endpoints
 
-- `POST /ai-agent`: Cria um novo agente.
-  - Parâmetros: `name`, `instructions`
-- `GET /ai-agent/create-thread`: Cria uma nova thread de conversação.
-- `GET /ai-agent/run`: Envia uma mensagem para um agente em uma thread.
-  - Parâmetros: `agentId`, `threadId`, `userInput`
+- `POST /ai-agent`: Creates a new agent.
+  - Parameters: `name`, `instructions`
+- `GET /ai-agent/create-thread`: Creates a new conversation thread.
+- `GET /ai-agent/run`: Sends a message to an agent in a thread.
+  - Parameters: `agentId`, `threadId`, `userInput`
 
-## Requisitos
+## Requirements
 
-- .NET 8 ou superior
-- Conta e recursos do Azure configurados para uso de agentes de IA
-- Configuração das variáveis em `AzureAiSettings` (model e uri do serviço)
+- .NET 8 or higher
+- Azure account and resources configured for AI agents usage
+- Configuration of variables in `AzureAiSettings` (model and service uri)
 
-## Exemplo de Uso
+## Usage Example
 
 ```bash
-curl -X POST "https://sua-api/ai-agent?name=MeuAgente&instructions=Responda como um assistente educado"
+curl -X POST "https://your-api/ai-agent?name=MyAgent&instructions=Respond as a polite assistant"
 ```
 
 ```bash
-curl "https://sua-api/ai-agent/create-thread"
+curl "https://your-api/ai-agent/create-thread"
 ```
 
 ```bash
-curl "https://sua-api/ai-agent/run?agentId=<id>&threadId=<id>&userInput=Olá, agente!"
+curl "https://your-api/ai-agent/run?agentId=<id>&threadId=<id>&userInput=Hello, agent!"
 ```
 
-## Licença
+## License
 
-MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+MIT License - see the [LICENSE](LICENSE) file for more details.
 
 ---
 
-> Projeto mantido por [Carlos Machel](https://github.com/carlosmachel)
+> Project maintained by [Carlos Machel](https://github.com/carlosmachel)
